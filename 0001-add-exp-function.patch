@@ -1,0 +1,50 @@
+From 482365d5ed9822268eee68a149d1381c1f205b47 Mon Sep 17 00:00:00 2001
+From: Brent Laster <Brent.Laster@sas.com>
+Date: Tue, 4 Sep 2012 22:56:05 -0400
+Subject: [PATCH] add exp function
+
+---
+ calc.html |    6 +++++-
+ 1 files changed, 5 insertions(+), 1 deletions(-)
+
+diff --git a/calc.html b/calc.html
+index 2f41b8c..a900de3 100644
+--- a/calc.html
++++ b/calc.html
+@@ -4,7 +4,7 @@
+ 
+ <script language=javascript type="text/javascript">
+ 
+-var plus,minus,divide,multiply,max
++var plus,minus,divide,multiply,max,pow
+ 
+ function initialize(){
+  plus=document.calc.operator.options[0]
+@@ -12,6 +12,7 @@ function initialize(){
+  divide=document.calc.operator.options[2]
+  multiply=document.calc.operator.options[3]
+  max=document.calc.operator.options[4]
++ pow=document.calc.operator.options[5]
+ }
+ 
+ function calculate(){
+@@ -27,6 +28,8 @@ function calculate(){
+         document.calc.answer.value = a * b
+ 	if (max.selected)
+ 		document.calc.answer.value = Math.max(a,b)
++	if (pow.selected)
++		document.calc.answer.value = Math.pow(a,b)
+ }
+ 
+ </script>
+@@ -48,6 +51,7 @@ Change the operation via the dropdown selection box if desired.
+ <option value=divide>/
+ <option value=multiply>*
+ <option value=max>max
++<option value=pow>**
+ </select>
+ 
+ <input type=text name=val2 size=10>
+-- 
+1.7.9.msysgit.0
+
